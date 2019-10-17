@@ -15,15 +15,25 @@ User = {
 }
 signUp(user){
   if (ValidateEmail(sampleEmail)) {
-    userList.set(email, user.email)
+    userList.set(email, user.email);
+    console.log('email validated')
   }
 }
 
 signIn(user){
-if (samplePass === this.email)
-console.log('Sign in successful!');      
-    })
+if (samplePassw)
+  if (ValidateEmail(sampleEmail)){
+      console.log('signed in!')
+    }
+}
+signOut(user){
+  console.log('signed out');
 }
 
+passwordChange(user){
+if(samplePass === this.password){
+ this.password = newPassword 
+}
+}
 
 module.exports = { User };
