@@ -14,6 +14,13 @@ User = {
   passwordConfirm = this.passwordConfirm
 }
 signUp(user){
+  if (ValidateEmail(sampleEmail)) {
+    userList.set(email, user.email)
+  }
+}
+
+signIn(user){
+if (samplePassw)
   if (ValidateEmail(sampleEmail){
       
     })
