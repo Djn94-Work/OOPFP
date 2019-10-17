@@ -25,15 +25,6 @@ if (samplePassw)
       
     })
 }
-signIn(user){
-  console.log(user)
 
-}
-signOut(user){
-
-}
-passwordChange(user){
-
-}
 
 module.exports = { User };
