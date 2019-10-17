@@ -1,5 +1,5 @@
 userList = new Map();
-
+const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 function ValidateEmail(inputText) {
   if (inputText.match(mailformat)) {
     return true;
@@ -13,31 +13,34 @@ class User {
     this.email = email;
     this.password = password;
     this.passwordConfirm = passwordConfirm;
-  
-    signUp() {
-      if (ValidateEmail(user.email){
-        userLIst.set(email, this);
-      }
-      return this;
+  }
+  signUp() {
+    if (
+      ValidateEmail(user.email) &&
+      !user.email in userList &&
+      password === passwordConfirm
+    ) {
+      userList.set(email, this);
     }
   }
-
   signIn() {
-    if (samplePass === this.password) {
-      console.log('successful login');
-      }
-     }
-  signOut() { 
-    console.log('successful logout');
-  }
-  
-  passChange() { 
-    if (samplePass === this.password) {
-      this.password = newPass;
-      }
+    if (user.email in userList && passwordInput === user.password) {
+      console.log("user is signed in!");
     }
   }
-  
+  deleteAcct() {
+    if (passwordInput === user.password) {
+      userList.set(this, "");
+    }
+  }
+  passwordChange() {
+    if (passwordInput === user.password) {
+      userList.set(this.password, newPassword);
+    }
+  }
+}
 
 const user1 = new User("bob@joe.com", "abc123", "abc123");
 
+//sign up sign in sign out change pw
+user1.signUp();
