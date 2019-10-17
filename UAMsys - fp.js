@@ -20,9 +20,8 @@ signUp(user){
 }
 
 signIn(user){
-if (samplePassw)
-  if (ValidateEmail(sampleEmail){
-      
+if (samplePass === this.email)
+console.log('Sign in successful!');      
     })
 }
 
